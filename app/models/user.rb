@@ -10,5 +10,11 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :favorite_topics, through: :favorites, source: 'topic'
   has_many :comments
+  
+  def age
+    now = Time.zone.now
+    (now.strftime('%Y%m%d').to_i - birthday.strftime('%Y%m%d').to_i) / 10000
+  end
+  
 end
 
