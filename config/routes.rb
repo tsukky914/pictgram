@@ -9,7 +9,16 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   
   resources :users
+  # ↓
+  # get '/users', to: 'users#index'
+  # get '/users/new', to: 'users#new'
+  # post '/users', to: 'users#create'
+  # ・・・・・
+
   resources :topics
+  # get '/topics', to: 'topics#index'
+  # get '/topics/new', to: 'topics#new'
+  # post '/topics', to: 'topics#create'
   resources :comments
   
   get 'favorites/index'
